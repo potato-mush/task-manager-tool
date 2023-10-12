@@ -1,0 +1,693 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Navigation bar styles */
+
+nav {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 8vh;
+  font-family: "Montserrat", sans-serif;
+  z-index: 5;
+}
+
+.logo {
+  position: absolute;
+  left: 20px;
+  padding: 12px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2rem;
+  font-weight: 100;
+  margin: 0 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.logo a {
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  position: relative;
+}
+
+nav ul li {
+  margin: 0 20px;
+  list-style: none;
+  text-transform: uppercase;
+  padding: 20px 10px;
+}
+
+.nav-links ul li a {
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: all ease 0.4s;
+}
+
+.navbar-right {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+}
+
+.navbar-right li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.navbar-right i {
+  font-size: 18px;
+}
+
+.navbar-right .login-btn {
+  background-color: #030720;
+  color: #f9f9f9;
+  border: 1px solid #030720;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.navbar-right .login-btn:hover {
+  background-color: #f9f9f9;
+  border: 1px solid #f9f9f9;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  color: #171a2b;
+}
+
+.navbar-right .signup-btn {
+  background: transparent;
+  color: #030720;
+  border: 1px solid #030720;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.navbar-right .signup-btn:hover {
+  background-color: #030720;
+  color: #f9f9f9;
+}
+
+/*Modal Styles*/
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 40px 50px;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 15px rgba(253, 236, 236, 0.1);
+  z-index: 10;
+  transition: 0.5s;
+  display: none;
+}
+
+.wrapper.active {
+  display: block;
+  transition: 0.5s;
+}
+
+.signup-form,
+.login-form {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 1000;
+}
+.form {
+  width: 500px;
+  padding: 20px 50px;
+}
+.form .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+}
+.form .text h1 {
+  text-align: center;
+  margin: 30px 0;
+}
+.form form {
+  display: block;
+  margin: auto;
+}
+.form .row {
+  display: flex;
+  justify-content: space-between;
+}
+.form .row input {
+  margin-bottom: 0;
+}
+.form .row input:first-child {
+  margin-right: 10px;
+}
+.form .row input:last-child {
+  margin-left: 10px;
+}
+.form form input {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  outline: none;
+}
+.signup-form.active,
+.login-form.active {
+  top: 50%;
+  transition: 0.5s;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Home section styles */
+.section.home {
+  position: relative;
+  text-align: center;
+  color: #fff;
+}
+
+.section.home img {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.section.home .content {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px 0;
+}
+
+.section.home h1.section-title {
+  color: #333;
+  font-size: 72px;
+  margin-bottom: 20px;
+}
+
+.section.home p {
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.action-button {
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* About section styles */
+.section.about {
+  background-color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.about .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+.paragraph-title {
+  font-size: 48px;
+  font-family: "Monsterrat", sans-serif;
+  margin: 10px;
+}
+
+.upper-left,
+.upper-right,
+.bottom-left,
+.bottom-right {
+  text-align: center;
+  padding: 28px;
+}
+
+.upper-left p,
+.bottom-right p {
+  font-size: 28px;
+  color: #555;
+  font-family: "Reenie Beanie", cursive;
+}
+
+.upper-right img,
+.bottom-left img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.upper-left {
+  background-color: #cfc;
+  transform: rotate(-5deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.bottom-right {
+  background-color: #ffc;
+  transform: rotate(5deg);
+  transition: all 0.3s ease-in-out;
+}
+
+.upper-left:hover,
+.bottom-right:hover {
+  transform: rotate(0deg);
+  transform: scale(1.1);
+  box-shadow: 5px 5px 18px rgba(33, 33, 33, 0.7);
+}
+
+/* Help section styles */
+.section.help {
+  background-color: #fff;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.section.help .content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section.help h2.section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.section.help p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #45a049;
+}
+
+/* Footer styles */
+
+/* Company footer styles */
+.company-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 80px;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all ease-in-out 0.5s;
+}
+
+.sidebar a:visited,
+.sidebar a:link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.sidebar:hover {
+  width: 250px;
+}
+
+.sidebar:hover span {
+  color: #fff;
+}
+
+.sb-options {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  padding: 25px;
+  transition: all ease 0.4s;
+}
+
+.sb-options.active {
+  background-color: #555;
+  border-right: 8px solid #fff;
+  box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 1);
+}
+
+.sb-options i {
+  margin-right: 20px;
+  font-size: 24px;
+}
+
+/* Hide text by default */
+.sb-options span {
+  color: transparent;
+}
+
+.logoutBtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #ff6a6a;
+  display: block;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.logoutBtn:hover {
+  color: #ff0000;
+}
+
+.ItemContent {
+  width: 70%;
+  margin: 60px 0 0 320px;
+  padding: 20px;
+  display: none;
+}
+
+.ItemContent.current {
+  display: block;
+}
+
+.ItemContentTitle {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.list {
+  color: #555;
+  font-size: 24px;
+  width: 100%;
+  font-family: "Reenie Beanie", sans-serif;
+  border: 1px solid #dedede;
+}
+
+.list li {
+  display: flex; /* Use flexbox to position items horizontally */
+  align-items: center; /* Vertically center items */
+  background-color: #ffe55e;
+  list-style: none;
+  border-bottom: 1px dotted #e3be3e;
+  padding: 10px 10px 10px 70px;
+  text-transform: capitalize;
+  position: relative; /* Add relative positioning to create a stacking context */
+}
+
+.list li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50px; /* Adjust this value to control the position of the lines */
+  width: 2px;
+  background-color: #e3be3e;
+}
+
+.list li span {
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.list li span:hover {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.list .done span {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.list li .High {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  width: 60px;
+  padding: 5px 0;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ff6868;
+  color: #cc3a3a;
+}
+
+.list li .Medium {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  width: 60px;
+  padding: 5px 0;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fffc68;
+  color: #e3be3e;
+}
+
+.list li .Low {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  width: 60px;
+  padding: 5px 0;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #6dff68;
+  color: #42ca3e;
+}
+
+.right-align {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.right-align div {
+  margin: 0 20px;
+}
+
+.projectHeader {
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.projectHeader div {
+  padding-top: 20px;
+  font-weight: bold;
+}
+
+.projectHeader .right-align div {
+  margin: 0 10px 10px 10px;
+}
+
+.projectHeader .right-align div:last-child {
+  margin: 0 0 10px 10px;
+}
+
+/* Pagination styles */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination .prevBtn,
+.pagination .nextBtn {
+  background-color: #007bff;
+}
+
+.pagination a {
+  border-radius: 12px;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  color: #fff;
+  background-color: #76b8ff;
+}
+
+.pagination a.active,
+.pagination a:hover {
+  text-decoration: none;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.registerBtn {
+  border: none;
+  background-color: #ffe55e;
+  color: #e3be3e;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.deleteProjectBtn {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: none;
+  color: #ff6a6a; /* Red color for the delete button */
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px; /* Adjust the margin for spacing */
+}
+
+.deleteProjectBtn:hover {
+  color: #ff0000; /* Change the color on hover */
+}
+
+.list li .deleteProjectBtn {
+  margin-left: auto; /* Push the button to the right */
+}
+
+textarea {
+  resize: none;
+}
+
+/* Reminders Style */
+
+#sticky-note {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  padding: 24px;
+  gap: 24px;
+}
+
+.note {
+  background: #ffe55e;
+  height: 200px;
+  box-sizing: border-box;
+  padding: 16px;
+  border: none;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  resize: none;
+  font-family: sans-serif;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.note:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.add-note {
+  width: 200px;
+  height: 200px;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 120px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-note:hover {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.15);
+}
+
+.error-message {
+  font-size: 14px;
+  width: 400px;
+  background-color: rgb(255, 196, 199);
+  border-left: 8px solid #ff6868;
+  color: #ff6868;
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
+  position: absolute;
+  transition: all ease 0.3s;
+}
